@@ -8,8 +8,15 @@
     <!-- svg icon add  -->
     <link rel="shortcut icon" href="portfolio.png" type="image/x-icon">
     <!-- css file link  -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="color-1.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/color-1.css">
+    
+    <link rel="stylesheet" href="./css/color-1.css" class="alternate-style" title="color-1" disabled>
+    <link rel="stylesheet" href="./css/color-2.css" class="alternate-style" title="color-2" disabled>
+    <link rel="stylesheet" href="./css/color-3.css" class="alternate-style" title="color-3" disabled>
+    <link rel="stylesheet" href="./css/color-4.css" class="alternate-style" title="color-4" disabled>
+    <link rel="stylesheet" href="./css/color-5.css" class="alternate-style" title="color-5" disabled>
+    <link rel="stylesheet" href="/css/style-switcher.css">
 
     <!-- font awesome link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -30,11 +37,11 @@
                 <span></span>
             </div>
             <ul class="nav">
-                <li><a href="#" class="active"><i class="fa fa-home"></i>Home</a></li>
-                <li><a href="#"><i class="fa fa-user"></i>About</a></li>
-                <li><a href="#"><i class="fa fa-list"></i>Services</a></li>
-                <li><a href="#"><i class="fa fa-briefcase"></i>Protfolio</a></li>
-                <li><a href="#"><i class="fa fa-comments"></i>Contact</a></li>
+                <li><a href="#home" class="active"><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="#about"><i class="fa fa-user"></i>About</a></li>
+                <li><a href="#services"><i class="fa fa-list"></i>Services</a></li>
+                <li><a href="#protfolio"><i class="fa fa-briefcase"></i>Protfolio</a></li>
+                <li><a href="#contact"><i class="fa fa-comments"></i>Contact</a></li>
             </ul>
         </div>
         <!-- aside End  -->
@@ -44,7 +51,7 @@
         <div class="main-content">
             <!-- Home section start  -->
 
-            <section class="home section">
+            <section class="home section active" id="home">
                 <div class="container">
                     <div class="row">
                         <div class="home-info padd-15">
@@ -54,7 +61,7 @@
                                 websites. I love solving problems with code and creating seamless digital experiences."
                             </p>
 
-                            <a href="#contact" class="btn hire-me ">Hire Me <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="#" class="btn ">Download CV <i class="fa-solid fa-arrow-down"></i></a>
                         </div>
                         <div class="home-img padd-15">
                             <img src="images/hero1.jpg" alt="">
@@ -67,7 +74,7 @@
 
             <!-- About Section Start -->
 
-            <section class="about section">
+            <section class="about section" id="about">
                 <div class="container">
                     <div class="row">
                         <div class="section-title  padd-15">
@@ -116,8 +123,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="button padd-15">
-                                            <a href="#" class="btn">Download CV</a>
-                                            <a href="#contact" class="btn hire-me">Hire Me</a>
+                                            <a href="#contact" class="btn hire-me">Hire Me <i class="fa-solid fa-arrow-right-long"></i></a>
                                         </div>
                                     </div>
 
@@ -253,7 +259,7 @@
             <!-- About Section End -->
 
             <!-- Services Section Start -->
-            <section class="service section">
+            <section class="service section" id="services">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
@@ -326,7 +332,7 @@
 
 
             <!-- Protfolio Section Start -->
-            <section class="protfolio section">
+            <section class="protfolio section" id="protfolio">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
@@ -400,11 +406,11 @@
 
             <!-- Contact Section Start -->
 
-            <section class="contact section">
+            <section class="contact section" id="contact">
                 <div class="container">
                     <div class="row">
                         <div class="section-title padd-15">
-                            <h2>Pojects</h2>
+                            <h2>Contact</h2>
                         </div>
                     </div>
                     <h3 class="contact-title padd-15">Have You any Question ?</h3>
@@ -492,8 +498,33 @@
 
 
     <!-- Main container end  -->
+    
+    <!-- start switcher start  -->
+    
+    <div class="style-switcher">
+        <div class="style-switcher-toggler s-icon">
+            <i class="fas fa-cog fa-spin"></i>
+        </div>
+        <div class="day-night s-icon">
+            <i class="fas "></i>
+        </div>
+        <h4>Theme Colors</h4>
+        <div class="colors">
+            <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+            <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+            <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+            <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+            <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+        </div>
+    </div>
+
+    <!-- start switcher end  -->
+
+
 
     <!-- js link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     <script src="script.js"></script>
 </body>
 

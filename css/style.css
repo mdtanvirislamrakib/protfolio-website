@@ -1,13 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 :root {
-    --bg-color-900: #f2f2f2;
+    --bg-black-900: #f2f2f2;
     --bg-black-100: #fdf9ff;
     --bg-black-50: #eBdfec;
     --text-black-900: #302e4d;
     --text-black-700: #504e70;
 }
-
+body.dark {
+    --bg-black-900: #151515;
+    --bg-black-100: #222222;
+    --bg-black-50: #393939;
+    --text-black-900: #ffffff;
+    --text-black-700: #e9e9e9;
+}
 * {
     margin: 0;
     padding: 0;
@@ -26,17 +32,38 @@ ul {
     list-style: none;
 }
 .section {
-    background: var(--bg-color-900);
+    background: var(--bg-black-900);
     min-height: 100vh;
     display: block;
     padding: 0px 30px;
     opacity: 1;
+    position: fixed;
+    left: 270px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+.section.section-back {
+    z-index: 1;
+}
+.section.active {
+    z-index: 2;
+    opacity: 1;
+    animation: slideSection 1s ease;
+}
+@keyframes slideSection {
+    0% {
+        transform: translateX(100%);
+    } 100% {
+        transform: translateX(0%);
+    }
 }
 .hidden {
     display: none !important; 
-}
-.main-content {
-    padding-left: 270px;
 }
 .padd-15 {
     padding-left: 15px;
@@ -126,6 +153,7 @@ ul {
     justify-content: center;
     align-items: center;
     z-index: 10;
+    transition: all 0.3s ease;
 }
 
 .aside .logo {
@@ -183,8 +211,19 @@ ul {
     display: none;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
 }
-
+.aside .nav-toggler.open span {
+    background-color: transparent;
+}
+.aside .nav-toggler.open span::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+.aside .nav-toggler.open span::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
 .aside .nav-toggler span {
     height: 2px;
     width: 18px;
@@ -257,6 +296,7 @@ ul {
 h3.hello {
     font-size: 28px;
     margin: 15px 0;
+    color: var(--text-black-900);
 }
 h3.hello span {
     font-family: "Clicker Script", serif;
@@ -268,6 +308,7 @@ h3.hello span {
 h3.my-profession {
     font-size: 30px;
     margin: 15px 0;
+    color: var(--text-black-900);
 }
 .typing {
     font-size: 30px;
@@ -577,8 +618,11 @@ h3.my-profession {
 .protfolio .protfolio-item-inner .protfolio-image img {
     width: 100%;
     display: block;
+    transition: all 0.5s ease;
 }
-
+.protfolio .protfolio-item-inner .protfolio-image:hover img {
+    transform: rotate(2deg);
+}
 /* contact  */
 
 .contact-title {
@@ -674,8 +718,21 @@ h3.my-profession {
     .aside {
         left: -270px;
     }
-    .main-content {
-        padding-left: 0;
+    .aside.open{
+        left: 0;
+    }
+    .aside .nav-toggler.open {
+        left: 300px;
+    }
+    .aside .nav-toggler {
+        display: flex;
+        left: 30px;
+    }
+    .section.open {
+        left: 0px;
+    }
+    .section {
+        left: 0;
     }
     .about .about-content .personal-info .info-item p span {
         display: block;

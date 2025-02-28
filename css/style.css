@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 :root {
     --bg-black-900: #f2f2f2;
     --bg-black-100: #fdf9ff;
@@ -299,7 +299,8 @@ h3.hello {
     color: var(--text-black-900);
 }
 h3.hello span {
-    font-family: "Clicker Script", serif;
+    /* font-family: "Clicker Script", serif; */
+    font-family: "Space Grotesk", sans-serif;
     font-size: 30px;
     font-weight: 700;
     color: var(--skin-color);
@@ -315,6 +316,7 @@ h3.my-profession {
     color: var(--skin-color);
 }
 .home-info p {
+    font-family: "Space Grotesk", sans-serif;
     margin-bottom: 70px;
     font-size: 20px;
     color: var(--text-black-700);
